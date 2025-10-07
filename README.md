@@ -429,17 +429,3 @@ Notes
 - SwiftUI/AppKit (UI)
 - MLX‑Swift, MLXLLM (runtime and generation)
 
-## Contributors
-
-- [wizardeur](https://github.com/wizardeur) — first PR creator
-
-## Community
-
-- 📚 Browse our [Documentation](https://docs.dinoki.ai/) for guides and tutorials
-- 💬 Join us on [Discord](https://discord.gg/dinoki)
-- 📖 Read the [Contributing Guide](CONTRIBUTING.md) and our [Code of Conduct](CODE_OF_CONDUCT.md)
-- 🔒 See our [Security Policy](SECURITY.md) for reporting vulnerabilities
-- ❓ Get help in [Support](SUPPORT.md)
-- 🚀 Pick up a [good first issue](https://github.com/dinoki-ai/osaurus/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) or [help wanted](https://github.com/dinoki-ai/osaurus/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-
-If you find Osaurus useful, please ⭐ the repo and share it!
