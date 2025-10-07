@@ -15,10 +15,6 @@
 
 Native, Apple Silicon–only local LLM server. Built on Apple's MLX for maximum performance on M‑series chips. SwiftUI app + SwiftNIO server with OpenAI‑compatible and Ollama‑compatible endpoints.
 
-Created by Dinoki Labs ([dinoki.ai](https://dinoki.ai)), a fully native desktop AI assistant and companion.
-
-📚 **[View Documentation](https://docs.dinoki.ai/)** - Guides, tutorials, and comprehensive documentation
-
 ## Highlights
 
 - **Native MLX runtime**: Optimized for Apple Silicon using MLX/MLXLLM
