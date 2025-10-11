@@ -1,14 +1,3 @@
-# Osaurus
-
-[![Release](https://img.shields.io/github/v/release/dinoki-ai/osaurus?sort=semver)](https://github.com/dinoki-ai/osaurus/releases)
-[![Downloads](https://img.shields.io/github/downloads/dinoki-ai/osaurus/total)](https://github.com/dinoki-ai/osaurus/releases)
-[![License](https://img.shields.io/github/license/dinoki-ai/osaurus)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/dinoki-ai/osaurus?style=social)](https://github.com/dinoki-ai/osaurus/stargazers)
-![Platform](<https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon)-black?logo=apple>)
-![OpenAI API](https://img.shields.io/badge/OpenAI%20API-compatible-0A7CFF)
-![Ollama API](https://img.shields.io/badge/Ollama%20API-compatible-0A7CFF)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
-
 <p align="center">
   <img width="452" height="222" alt="Screenshot 2025-09-22 at 7 02 10 PM" src="https://github.com/user-attachments/assets/6cd07add-2768-4556-ad0c-ed721ebc6596" />
 </p>
