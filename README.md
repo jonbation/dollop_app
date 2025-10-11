@@ -1,6 +1,3 @@
-<p align="center">
-  <img width="452" height="222" alt="Screenshot 2025-09-22 at 7 02 10 PM" src="https://github.com/user-attachments/assets/6cd07add-2768-4556-ad0c-ed721ebc6596" />
-</p>
 
 Native, Apple Silicon–only local LLM server. Built on Apple's MLX for maximum performance on M‑series chips. SwiftUI app + SwiftNIO server with OpenAI‑compatible and Ollama‑compatible endpoints.
 
