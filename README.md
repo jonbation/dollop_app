@@ -55,28 +55,3 @@ The app will appear in your menu bar, ready to serve local LLMs on your Mac.
 4. Open the model manager to download a model (e.g., "Llama 3.2 3B Instruct 4bit")
 
 Models are stored by default at `~/MLXModels`. Override with the environment variable `OSU_MODELS_DIR`.
-
-### Command-line server management
-
-The CLI lets you start/stop the server programmatically. If `osaurus` isn’t found in your `PATH` after installing the app:
-
-- Run the one-liner above to create the symlink, or
-- From a cloned repo, run: `scripts/install_cli_symlink.sh`, or
-- For development builds: `make install-cli` (uses DerivedData output)
-
-```bash
-# Start on localhost (default)
-osaurus serve --port 1337
-
-# Start exposed on your LAN (will prompt for confirmation)
-osaurus serve --port 1337 --expose
-
-# Start exposed without prompt (non-interactive)
-osaurus serve --port 1337 --expose --yes
-
-# Check status
-osaurus status
-
-# Stop the server
-osaurus stop
-```
