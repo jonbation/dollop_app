@@ -3,15 +3,11 @@ Native, Apple Silicon–only local LLM server. Built on Apple's MLX for maximum 
 
 ## Highlights
 
-- **Native MLX runtime**: Optimized for Apple Silicon using MLX/MLXLLM
-- **Apple Silicon only**: Designed and tested for M‑series Macs
 - **OpenAI API compatible**: `/v1/models` and `/v1/chat/completions` (stream and non‑stream)
 - **Ollama‑compatible**: `/chat` endpoint with NDJSON streaming for OllamaKit and other Ollama clients
 - **Function/Tool calling**: OpenAI‑style `tools` + `tool_choice`, with `tool_calls` parsing and streaming deltas
 - **Fast token streaming**: Server‑Sent Events for low‑latency output
-- **Model manager UI**: Browse, download, and manage MLX models from `mlx-community`
-- **System resource monitor**: Real-time CPU and RAM usage visualization
-- **Self‑contained**: SwiftUI app with an embedded SwiftNIO HTTP server
+
 
 ## Requirements
 
@@ -54,30 +50,9 @@ osaurus/
 
 - Native MLX text generation with model
 - Model manager with curated suggestions (Llama, Qwen, Gemma, Mistral, etc.)
-- Download sizes estimated via Hugging Face metadata
-- Streaming and non‑streaming chat completions
 - Multiple response formats: SSE (OpenAI‑style) and NDJSON (Ollama‑style)
 - Compatible with OllamaKit and other Ollama client libraries
 - OpenAI‑compatible function calling with robust parser for model outputs (handles code fences/formatting noise)
-- Auto‑detects stop sequences and BOS token from tokenizer configs
-- Health endpoint and simple status UI
-- Real-time system resource monitoring
-- Path normalization for API compatibility
-
-## Benchmarks
-
-The following are 20-run averages from our batch benchmark suite. See raw results for details and variance.
-
-| Server    | Model                      | TTFT avg (ms) | Total avg (ms) | Chars/s avg | TTFT rel | Total rel | Chars/s rel | Success |
-| --------- | -------------------------- | ------------- | -------------- | ----------- | -------- | --------- | ----------- | ------- |
-| Osaurus   | llama-3.2-3b-instruct-4bit | 87            | 1237           | 554         | 0%       | 0%        | 0%          | 100%    |
-| Ollama    | llama3.2                   | 33            | 1622           | 430         | +63%     | -31%      | -22%        | 100%    |
-| LM Studio | llama-3.2-3b-instruct      | 113           | 1221           | 588         | -30%     | +1%       | +6%         | 100%    |
-
-- Metrics: TTFT = time-to-first-token, Total = time to final token, Chars/s = streaming throughput.
-- Relative % vs Osaurus baseline: TTFT/Total computed as 1 - other/osaurus; Chars/s as other/osaurus - 1. Positive = better.
-- Data sources: `results/osaurus-vs-ollama-lmstudio-batch.summary.json`, `results/osaurus-vs-ollama-lmstudio-batch.results.csv`.
-- How to reproduce: `scripts/run_bench.sh` calls `scripts/benchmark_models.py` to run prompts across servers and write results.
 
 ## API Endpoints
 
@@ -96,9 +71,6 @@ The following are 20-run averages from our batch benchmark suite. See raw result
 
 ## Getting Started
 
-### Download
-
-Download the latest signed build from the [Releases page](https://github.com/dinoki-ai/osaurus/releases/latest).
 
 ### Install with Homebrew
 
