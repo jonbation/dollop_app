@@ -18,21 +18,6 @@
 - Compatible with OllamaKit and other Ollama client libraries
 - OpenAI‑compatible function calling with robust parser for model outputs (handles code fences/formatting noise)
 
-## API Endpoints
-
-- `GET /` → Plain text status
-- `GET /health` → JSON health info
-- `GET /models` → OpenAI‑compatible models list
-- `GET /tags` → Ollama‑compatible models list
-- `POST /chat/completions` → OpenAI‑compatible chat completions
-- `POST /chat` → Ollama‑compatible chat endpoint
-
-**Path normalization**: All endpoints support common API prefixes (`/v1`, `/api`, `/v1/api`). For example:
-
-- `/v1/models` → `/models`
-- `/api/chat/completions` → `/chat/completions`
-- `/api/chat` → `/chat` (Ollama‑style)
-
 ## Getting Started
 
 ### Install with Homebrew
