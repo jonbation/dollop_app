@@ -13,10 +13,8 @@
 
 ## Features
 - Native MLX text generation with model
-- Model manager with curated suggestions (Llama, Qwen, Gemma, Mistral, etc.)
 - Multiple response formats: SSE (OpenAI‑style) and NDJSON (Ollama‑style)
 - Compatible with OllamaKit and other Ollama client libraries
-- OpenAI‑compatible function calling with robust parser for model outputs (handles code fences/formatting noise)
 
 ## Getting Started
 
