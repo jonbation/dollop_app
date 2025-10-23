@@ -1,6 +1,3 @@
-
-Native, Apple Silicon–only local LLM server. Built on Apple's MLX for maximum performance on M‑series chips. SwiftUI app + SwiftNIO server with OpenAI‑compatible and Ollama‑compatible endpoints.
-
 ## Highlights
 
 - **OpenAI API compatible**: `/v1/models` and `/v1/chat/completions` (stream and non‑stream)
@@ -8,46 +5,13 @@ Native, Apple Silicon–only local LLM server. Built on Apple's MLX for maximum 
 - **Function/Tool calling**: OpenAI‑style `tools` + `tool_choice`, with `tool_calls` parsing and streaming deltas
 - **Fast token streaming**: Server‑Sent Events for low‑latency output
 
-
 ## Requirements
 
 - macOS 15.5+
 - Apple Silicon (M1 or newer)
 - Xcode 16.4+ (to build from source)
 
-```
-osaurus/
-├── Core/
-│   ├── AppDelegate.swift
-│   └── osaurusApp.swift
-├── Controllers/
-│   ├── ServerController.swift      # NIO server lifecycle
-│   └── ModelManager.swift          # Model discovery & downloads (Hugging Face)
-├── Models/
-│   ├── MLXModel.swift
-│   ├── OpenAIAPI.swift             # OpenAI‑compatible DTOs
-│   ├── ResponseWriters.swift       # SSE and NDJSON response writers
-│   ├── ServerConfiguration.swift
-│   └── ServerHealth.swift
-├── Networking/
-│   ├── HTTPHandler.swift           # Request parsing & routing entry
-│   ├── Router.swift                # Routes → handlers with path normalization
-│   └── AsyncHTTPHandler.swift      # Unified streaming handler
-├── Services/
-│   ├── MLXService.swift            # MLX loading, session caching, generation
-│   ├── SearchService.swift
-│   └── SystemMonitorService.swift  # Real-time CPU and RAM monitoring
-├── Theme/
-│   └── Theme.swift
-├── Views/
-│   ├── Components/SimpleComponents.swift
-│   ├── ContentView.swift           # Start/stop server, quick controls
-│   └── ModelDownloadView.swift     # Browse/download/manage models
-└── Assets.xcassets/
-```
-
 ## Features
-
 - Native MLX text generation with model
 - Model manager with curated suggestions (Llama, Qwen, Gemma, Mistral, etc.)
 - Multiple response formats: SSE (OpenAI‑style) and NDJSON (Ollama‑style)
@@ -70,7 +34,6 @@ osaurus/
 - `/api/chat` → `/chat` (Ollama‑style)
 
 ## Getting Started
-
 
 ### Install with Homebrew
 
@@ -132,35 +95,3 @@ osaurus status
 # Stop the server
 osaurus stop
 ```
-
-Notes:
-
-- When started via CLI without `--expose`, Osaurus binds to `127.0.0.1` only.
-- `--expose` binds to `0.0.0.0` (LAN). There is no authentication; use only on trusted networks.
-- Management is local-only via macOS Distributed Notifications; there are no HTTP start/stop endpoints.
-
-
-Notes
-
-- Leave the field empty to disable CORS entirely.
-- `*` cannot be combined with credentials; Osaurus does not use cookies, so this is typically fine for local use.
-
-## Models
-
-- Curated suggestions include Llama, Qwen, Gemma, Mistral, Phi, DeepSeek, etc. (4‑bit variants for speed)
-- Discovery pulls from Hugging Face `mlx-community` and computes size estimates
-- Required files are fetched automatically (tokenizer/config/weights)
-- Change the models directory with `OSU_MODELS_DIR`
-
-## Notes & Limitations
-
-- Apple Silicon only (requires MLX); Intel Macs are not supported
-- Localhost by default; `--expose` enables LAN access. No authentication; use only on trusted networks or behind a reverse proxy.
-- `/transcribe` endpoints are placeholders pending Whisper integration
-
-## Dependencies
-
-- SwiftNIO (HTTP server)
-- SwiftUI/AppKit (UI)
-- MLX‑Swift, MLXLLM (runtime and generation)
-
